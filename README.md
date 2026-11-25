@@ -12,13 +12,13 @@ AI-driven Specification-Driven Development (AI-SDD) workflow.
 
 このリポジトリはプラグインの**カタログ（`.claude-plugin/marketplace.json`）のみ**を持ちます。プラグイン本体・
 CHANGELOG・GitHub Release は本体リポジトリ
-[ToshikiImagawa/ai-sdd-workflow-dev](https://github.com/ToshikiImagawa/ai-sdd-workflow-dev) にあります。
+[comcreate/ai-sdd-workflow-dev](https://github.com/comcreate/ai-sdd-workflow-dev) にあります。
 カタログの各エントリは `archive` ソースで、本体リポジトリの GitHub Release に添付された配布用 zip を参照し、
 `sha256` で内容を固定します。インストール時は zip をダウンロードして展開するだけなので、利用者の環境に git は不要です（Claude Code v2.1.224 以降が必要）。
 
 This repository holds **only the plugin catalog (`.claude-plugin/marketplace.json`)**. The plugin source code,
 CHANGELOG, and GitHub Releases live in the main repository,
-[ToshikiImagawa/ai-sdd-workflow-dev](https://github.com/ToshikiImagawa/ai-sdd-workflow-dev). Each catalog entry
+[comcreate/ai-sdd-workflow-dev](https://github.com/comcreate/ai-sdd-workflow-dev). Each catalog entry
 uses an `archive` source that points to the distribution zip attached to a GitHub Release of the main repository,
 pinned by its `sha256`. Installation only downloads and extracts the zip, so git is not required on the user's machine (requires Claude Code v2.1.224 or later).
 
@@ -31,7 +31,7 @@ source of truth.
 
 | プラグイン / Plugin | 言語 / Language      | 説明 / Description                                                                       | 本体リポジトリ / Source Repository                                                                         |
 |:---------------|:-------------------|:---------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------|
-| `sdd-workflow` | 多言語 / Multilingual | AI-SDD ワークフローを支援する統合プラグイン（`SDD_LANG` で言語切替）/ Unified plugin supporting AI-SDD workflow | [ToshikiImagawa/ai-sdd-workflow-dev](https://github.com/ToshikiImagawa/ai-sdd-workflow-dev) |
+| `sdd-workflow` | 多言語 / Multilingual | AI-SDD ワークフローを支援する統合プラグイン（`SDD_LANG` で言語切替）/ Unified plugin supporting AI-SDD workflow | [comcreate/ai-sdd-workflow-dev](https://github.com/comcreate/ai-sdd-workflow-dev) |
 
 ## インストール / Installation
 
@@ -40,8 +40,12 @@ source of truth.
 Claude Code で以下を実行 / Run the following in Claude Code:
 
 ```
-/plugin marketplace add ToshikiImagawa/ai-sdd-workflow
+/plugin marketplace add comcreate/ai-sdd-workflow
 ```
+
+このリポジトリは `ToshikiImagawa` アカウントから `comcreate` 組織へ移りました。旧名 `ToshikiImagawa/ai-sdd-workflow` も GitHub のリダイレクトで引き続き使えますが、新しく導入する場合は上の名前を使ってください。
+
+This repository moved from the `ToshikiImagawa` account to the `comcreate` organization. The old name `ToshikiImagawa/ai-sdd-workflow` keeps working through GitHub's redirect, but use the name above for new installs.
 
 ### プラグインをインストール / Install Plugin
 
@@ -91,8 +95,8 @@ Existing `specification/*_design.md` files **remain valid** and you are never as
 migration is not urgent and can be done feature by feature. For the full list of breaking changes, the
 migration steps, and the known limitations, see the plugin README:
 
-- [Migration from v4.x (English)](https://github.com/ToshikiImagawa/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.md#migration-from-v4x)
-- [v4.x からの移行（日本語）](https://github.com/ToshikiImagawa/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.ja.md#v4x-からの移行)
+- [Migration from v4.x (English)](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.md#migration-from-v4x)
+- [v4.x からの移行（日本語）](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.ja.md#v4x-からの移行)
 
 ## プラグイン詳細 / Plugin Details
 
@@ -100,11 +104,11 @@ migration steps, and the known limitations, see the plugin README:
 
 For plugin details, the CHANGELOG, and releases, see the main repository.
 
-- [sdd-workflow README](https://github.com/ToshikiImagawa/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.md)
-- [sdd-workflow README（日本語）](https://github.com/ToshikiImagawa/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.ja.md)
-- [CHANGELOG](https://github.com/ToshikiImagawa/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/CHANGELOG.md)
-- [CHANGELOG（日本語）](https://github.com/ToshikiImagawa/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/CHANGELOG.ja.md)
-- [Releases](https://github.com/ToshikiImagawa/ai-sdd-workflow-dev/releases)
+- [sdd-workflow README](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.md)
+- [sdd-workflow README（日本語）](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.ja.md)
+- [CHANGELOG](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/CHANGELOG.md)
+- [CHANGELOG（日本語）](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/CHANGELOG.ja.md)
+- [Releases](https://github.com/comcreate/ai-sdd-workflow-dev/releases)
 
 ## カタログの更新 / Updating the Catalog
 
