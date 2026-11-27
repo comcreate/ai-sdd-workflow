@@ -13,7 +13,7 @@
       "name": "sdd-workflow",
       "source": {
         "source": "archive",
-        "url": "https://github.com/comcreate/ai-sdd-workflow-dev/releases/download/v5.3.3/sdd-workflow-5.3.3.zip",
+        "url": "https://github.com/comcreate/ai-sdd-workflow/releases/download/v5.3.3/sdd-workflow-5.3.3.zip",
         "sha256": "24b338be3cc5038a2a9f8db9fa623c1703a34344fe47dc0cf98001842e388bcd"
       },
       "description": "A unified plugin supporting AI-driven Specification-Driven Development (AI-SDD) workflow. Prevents Vibe Coding problems and achieves high-quality implementations using specifications as the source of truth. Supports multiple languages via SDD_LANG configuration.",
