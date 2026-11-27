@@ -10,16 +10,16 @@ AI-driven Specification-Driven Development (AI-SDD) workflow.
 
 ## 概要 / Overview
 
-このリポジトリはプラグインの**カタログ（`.claude-plugin/marketplace.json`）のみ**を持ちます。プラグイン本体・
-CHANGELOG・GitHub Release は本体リポジトリ
-[comcreate/ai-sdd-workflow-dev](https://github.com/comcreate/ai-sdd-workflow-dev) にあります。
-カタログの各エントリは `archive` ソースで、本体リポジトリの GitHub Release に添付された配布用 zip を参照し、
+このリポジトリはプラグインの**カタログ（`.claude-plugin/marketplace.json`）**、配布用 zip を添付した
+[GitHub Release](https://github.com/comcreate/ai-sdd-workflow/releases)、利用者向け文書（[`docs/`](docs/)）を持ちます。
+プラグインの開発は非公開の本体リポジトリで行っています。
+カタログの各エントリは `archive` ソースで、このリポジトリの GitHub Release に添付された配布用 zip を参照し、
 `sha256` で内容を固定します。インストール時は zip をダウンロードして展開するだけなので、利用者の環境に git は不要です（Claude Code v2.1.224 以降が必要）。
 
-This repository holds **only the plugin catalog (`.claude-plugin/marketplace.json`)**. The plugin source code,
-CHANGELOG, and GitHub Releases live in the main repository,
-[comcreate/ai-sdd-workflow-dev](https://github.com/comcreate/ai-sdd-workflow-dev). Each catalog entry
-uses an `archive` source that points to the distribution zip attached to a GitHub Release of the main repository,
+This repository holds the **plugin catalog (`.claude-plugin/marketplace.json`)**, the
+[GitHub Releases](https://github.com/comcreate/ai-sdd-workflow/releases) that carry the distribution zips, and the
+user-facing documentation ([`docs/`](docs/)). The plugin is developed in a private main repository. Each catalog entry
+uses an `archive` source that points to the distribution zip attached to a GitHub Release of this repository,
 pinned by its `sha256`. Installation only downloads and extracts the zip, so git is not required on the user's machine (requires Claude Code v2.1.224 or later).
 
 プラグインは、Vibe Coding問題を防ぎ、仕様書を真実の源として高品質な実装を実現します。
@@ -29,9 +29,9 @@ source of truth.
 
 ## 利用可能なプラグイン / Available Plugins
 
-| プラグイン / Plugin | 言語 / Language      | 説明 / Description                                                                       | 本体リポジトリ / Source Repository                                                                         |
+| プラグイン / Plugin | 言語 / Language      | 説明 / Description                                                                       | ドキュメント / Docs                                                                                      |
 |:---------------|:-------------------|:---------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------|
-| `sdd-workflow` | 多言語 / Multilingual | AI-SDD ワークフローを支援する統合プラグイン（`SDD_LANG` で言語切替）/ Unified plugin supporting AI-SDD workflow | [comcreate/ai-sdd-workflow-dev](https://github.com/comcreate/ai-sdd-workflow-dev) |
+| `sdd-workflow` | 多言語 / Multilingual | AI-SDD ワークフローを支援する統合プラグイン（`SDD_LANG` で言語切替）/ Unified plugin supporting AI-SDD workflow | [docs/sdd-workflow](docs/sdd-workflow/README.md) |
 
 ## インストール / Installation
 
@@ -95,39 +95,41 @@ Existing `specification/*_design.md` files **remain valid** and you are never as
 migration is not urgent and can be done feature by feature. For the full list of breaking changes, the
 migration steps, and the known limitations, see the plugin README:
 
-- [Migration from v4.x (English)](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.md#migration-from-v4x)
-- [v4.x からの移行（日本語）](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.ja.md#v4x-からの移行)
+- [Migration from v4.x (English)](docs/sdd-workflow/README.md#migration-from-v4x)
+- [v4.x からの移行（日本語）](docs/sdd-workflow/README.ja.md#v4x-からの移行)
 
 ## プラグイン詳細 / Plugin Details
 
-プラグインの詳細・CHANGELOG・リリースは本体リポジトリを参照してください。
+プラグインの詳細・CHANGELOG・リリースは以下を参照してください。
 
-For plugin details, the CHANGELOG, and releases, see the main repository.
+For plugin details, the CHANGELOG, and releases, see:
 
-- [sdd-workflow README](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.md)
-- [sdd-workflow README（日本語）](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/README.ja.md)
-- [CHANGELOG](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/CHANGELOG.md)
-- [CHANGELOG（日本語）](https://github.com/comcreate/ai-sdd-workflow-dev/blob/main/plugins/sdd-workflow/CHANGELOG.ja.md)
-- [Releases](https://github.com/comcreate/ai-sdd-workflow-dev/releases)
+- [sdd-workflow README](docs/sdd-workflow/README.md)
+- [sdd-workflow README（日本語）](docs/sdd-workflow/README.ja.md)
+- [CHANGELOG](docs/sdd-workflow/CHANGELOG.md)
+- [CHANGELOG（日本語）](docs/sdd-workflow/CHANGELOG.ja.md)
+- [Releases](https://github.com/comcreate/ai-sdd-workflow/releases)
 
 ## カタログの更新 / Updating the Catalog
 
 本体リポジトリでリリースタグ `vX.Y.Z` が打たれると、本体リポジトリの release workflow がこのリポジトリの `main` 向けに
-`marketplace.json` の `version` / `url` / `sha256` を更新する PR を作成します。PR をマージすると利用者に新しいバージョンが
+このリポジトリに GitHub Release（配布用 zip を添付）を作成し、`marketplace.json` の `version` / `url` / `sha256` と
+`docs/` 配下の文書を更新する PR を作成します。PR をマージすると利用者に新しいバージョンが
 配布されます。
 
-When a release tag `vX.Y.Z` is pushed in the main repository, its release workflow opens a PR against `main` of this
-repository that updates `version` / `url` / `sha256` in `marketplace.json`. Merging that PR delivers the new version to
+When a release tag `vX.Y.Z` is pushed in the main repository, its release workflow creates a GitHub Release (with the
+distribution zip) in this repository and opens a PR against `main` that updates `version` / `url` / `sha256` in
+`marketplace.json` and the documents under `docs/`. Merging that PR delivers the new version to
 users.
 
 ### プラグインを追加するとき / Adding a Plugin
 
-`.claude-plugin/marketplace.json` の `plugins` 配列に `archive` ソースのエントリを追加します。`url` には本体リポジトリの
+`.claude-plugin/marketplace.json` の `plugins` 配列に `archive` ソースのエントリを追加します。`url` にはこのリポジトリの
 GitHub Release に添付した配布用 zip の URL を、`sha256` にはその zip の SHA-256（64 桁の 16 進）を指定します
 （`curl -sL <url> | shasum -a 256` で確認できます）。プラグインのルート（`.claude-plugin/plugin.json` を含むディレクトリ）は zip の先頭か 1 階層下に置きます。
 
 Add an entry with an `archive` source to the `plugins` array in `.claude-plugin/marketplace.json`. Set `url` to the
-distribution zip attached to a GitHub Release of the main repository, and `sha256` to the SHA-256 of that zip
+distribution zip attached to a GitHub Release of this repository, and `sha256` to the SHA-256 of that zip
 (64 hex characters; check it with `curl -sL <url> | shasum -a 256`). Place the plugin root (the directory containing
 `.claude-plugin/plugin.json`) at the top of the zip or one directory down.
 
